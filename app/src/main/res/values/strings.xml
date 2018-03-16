@@ -14,7 +14,7 @@ limitations under the License. -->
 
 <resources>
     <!-- All comments are notes to translators. -->
-    <string name="app_name">LocaleText</string>
+    <string name="app_name">Locale Text</string>
 
     <!-- The Help option in the options menu, no more than 30 chars. -->
     <string name="action_help">Help</string>
@@ -26,11 +26,11 @@ limitations under the License. -->
     <string name="nougat">Nougat Candy Package</string>
 
     <!-- Do not translate.  -->
-    <string name="support_phone">+14155551212</string>
+    <string name="support_phone" translatable="false">+14155551212</string>
 
     <!-- Support Department should be capitalized.  -->
-    <string name="help_text">If you need help, contact our Support Department.</string>
 
     <!-- Do not translate.  -->
-    <string name="dial_log_message">Can\'t resolve app for ACTION_DIAL Intent.</string>
+    <string name="dial_log_message" translatable="false">Can\'t resolve app for ACTION_DIAL Intent.</string>
+    <string name="help_text">If you need help, contact our Support Department.</string>
 </resources>

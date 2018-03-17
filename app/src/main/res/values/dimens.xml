@@ -16,4 +16,5 @@ limitations under the License. -->
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="standard_margin">8dp</dimen>
     <dimen name="top_margin">18dp</dimen>
+    <dimen name="double_margin">16dp</dimen>
 </resources>

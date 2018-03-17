@@ -5,4 +5,10 @@
     <string name="description">El turrón es una familia de dulces elaborados con azúcar o miel, nueces tostadas (almendras, nueces, pistachos, avellanas y nueces de macadamia son comunes), claras de huevo batidas y, a veces, fruta confitada picada. Se usa en una variedad de barras de chocolate y chocolates.</string>
     <string name="nougat">Paquete de dulces de turrón</string>
     <string name="help_text">Si necesita ayuda, comuníquese con nuestro Departamento de Soporte.</string>
+    <string name="language">Idioma</string>
+    <string name="expiration_date">Fecha de caducidad:</string>
+    <string name="quantity">Cantidad:</string>
+    <string name="price">Precio por paquete:</string>
+    <string name="total">Total a pagar:</string>
+    <string name="quantity_hint">Ingrese un número</string>
 </resources>

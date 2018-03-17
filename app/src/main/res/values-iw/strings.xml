@@ -5,4 +5,10 @@
     <string name="help_text">אם אתה זקוק לעזרה, פנה למחלקת התמיכה שלנו.</string>
     <string name="nougat">חבילת נוגט</string>
     <string name="description">נוגעת היא משפחה של קונפליקטים עם סוכר או דבש, אגוזים קלויים (שקדים, אגוזי מלך, פיסטוקים, אגוזי לוז ואגוזי מקדמיה), מקציפים חלבונים, ולפעמים פירות מסוכרים קצוצים. הוא משמש במגוון של סוכריות שוקולד ו שוקולד.</string>
+    <string name="language">שפה</string>
+    <string name="total">:סך הכל לשלם</string>
+    <string name="price">:מחיר לחבילה</string>
+    <string name="quantity">:כַּמוּת</string>
+    <string name="expiration_date">:תאריך תפוגה</string>
+    <string name="quantity_hint">הזן מספר</string>
 </resources>

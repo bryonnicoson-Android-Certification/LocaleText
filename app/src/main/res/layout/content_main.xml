@@ -66,4 +66,107 @@ limitations under the License. -->
         app:layout_constraintStart_toEndOf="@id/product_image"
         app:layout_constraintTop_toBottomOf="@id/heading" />
 
+    <TextView
+        android:id="@+id/date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="@string/expiration_date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="01/01/2017"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBaseline_toBaselineOf="@id/date_label"
+        app:layout_constraintLeft_toRightOf="@id/date_label"
+        app:layout_constraintStart_toEndOf="@id/date_label" />
+
+    <TextView
+        android:id="@+id/quantity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="@string/quantity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_label" />
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:hint="@string/quantity_hint"
+        app:layout_constraintBaseline_toBaselineOf="@id/quantity_label"
+        app:layout_constraintLeft_toRightOf="@id/quantity_label"
+        app:layout_constraintStart_toEndOf="@id/quantity_label" />
+
+    <TextView
+        android:id="@+id/price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="@string/price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantity_label" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="$0.00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBaseline_toBaselineOf="@id/price_label"
+        app:layout_constraintLeft_toRightOf="@id/price_label"
+        app:layout_constraintStart_toEndOf="@id/price_label" />
+
+    <TextView
+        android:id="@+id/total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:text="@string/price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/price_label" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="$0.00"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBaseline_toBaselineOf="@id/total_label"
+        app:layout_constraintLeft_toRightOf="@id/total_label"
+        app:layout_constraintStart_toEndOf="@id/total_label" />
+
+
 </android.support.constraint.ConstraintLayout>

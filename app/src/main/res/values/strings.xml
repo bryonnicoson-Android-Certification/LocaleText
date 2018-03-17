@@ -33,4 +33,11 @@ limitations under the License. -->
     <!-- Do not translate.  -->
     <string name="dial_log_message" translatable="false">Can\'t resolve app for ACTION_DIAL Intent.</string>
     <string name="help_text">If you need help, contact our Support Department.</string>
+    <string name="language">Language</string>
+    <string name="expiration_date">Expiration Date:</string>
+    <string name="language">Language</string>
+    <string name="quantity">Quantity:</string>
+    <string name="price">Price per package:</string>
+    <string name="total">Total to pay:</string>
+    <string name="quantity_hint">Enter a number</string>
 </resources>

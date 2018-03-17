@@ -16,18 +16,26 @@
 
 package com.example.android.localetext;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -36,6 +44,11 @@ import java.util.concurrent.TimeUnit;
  * a floating action button, an options menu, and the app bar.
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private NumberFormat mNumberFormat = NumberFormat.getInstance();
+
+    private int mInputQuantity = 1;
 
     /**
      * Creates the view with a toolbar for the options menu
@@ -63,11 +76,42 @@ public class MainActivity extends AppCompatActivity {
         final Date myDate = new Date();
         final long expirationDate = myDate.getTime() + TimeUnit.DAYS.toMillis(5);
         myDate.setTime(expirationDate);
-        // todo: format date for locale
+        // Format date for locale
         String myFormattedDate = DateFormat.getDateInstance().format(myDate);
         // Display formatted date
         TextView expirationDateView = findViewById(R.id.date);
         expirationDateView.setText(myFormattedDate);
+
+        // Add an onEditorActionListener to the EditText
+        final EditText enteredQuantity = findViewById(R.id.quantity);
+        enteredQuantity.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    // close keyboard
+                    InputMethodManager imm = (InputMethodManager)
+                            v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                    // parse quantity EditText String in View v to int
+                    try {
+                        mInputQuantity = mNumberFormat.parse(v.getText().toString()).intValue();
+                        v.setError(null);
+                    } catch (ParseException e) {
+                        Log.e(TAG, Log.getStackTraceString(e));
+                        v.setError(getText(R.string.quantity_hint));
+                        return false;
+                    }
+                    // convert to string using locale's number format
+                    String myFormattedQuantity = mNumberFormat.format(mInputQuantity);
+                    v.setText(myFormattedQuantity);
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     /**

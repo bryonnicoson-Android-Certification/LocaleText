@@ -25,6 +25,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This app demonstrates how to localize an app with text, an image,
@@ -53,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
                 showHelp();
             }
         });
+
+        // Get the current date, add 5 days (in ms) to create expiration date, set that to display.
+        final Date myDate = new Date();
+        final long expirationDate = myDate.getTime() + TimeUnit.DAYS.toMillis(5);
+        myDate.setTime(expirationDate);
+        // todo: format date for locale
+        String myFormattedDate = DateFormat.getDateInstance().format(myDate);
+        // Display formatted date
+        TextView expirationDateView = findViewById(R.id.date);
+        expirationDateView.setText(myFormattedDate);
     }
 
     /**

@@ -134,6 +134,12 @@ public class MainActivity extends AppCompatActivity {
                     // convert to string using locale's number format
                     String myFormattedQuantity = mNumberFormat.format(mInputQuantity);
                     v.setText(myFormattedQuantity);
+
+                    // calc total price
+                    TextView totalPrice = findViewById(R.id.total);
+                    String myFormattedTotal = mCurrencyFormat.format(mPrice * mInputQuantity);
+                    totalPrice.setText(myFormattedTotal);
+
                     return true;
                 }
                 return false;

@@ -106,21 +106,6 @@ public class MainActivity extends AppCompatActivity {
                 mCurrencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
         }
         myFormattedPrice = mCurrencyFormat.format(mPrice);
-        
-
-        /**
-        if (deviceLocale.equals("ES") || deviceLocale.equals("IL")) {
-            if (deviceLocale.equals("ES")) {
-                mPrice *= mEsExchangeRate;
-            } else {
-                mPrice *= mIwExchangeRate;
-            }
-            myFormattedPrice = mCurrencyFormat.format(mPrice);
-        } else {
-            mCurrencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
-            myFormattedPrice = mCurrencyFormat.format(mPrice);
-        }
-        **/
 
         TextView localePrice = findViewById(R.id.price);
         localePrice.setText(myFormattedPrice);

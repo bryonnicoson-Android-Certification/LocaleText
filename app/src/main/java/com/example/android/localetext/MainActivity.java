@@ -37,6 +37,7 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
     private NumberFormat mNumberFormat = NumberFormat.getInstance();
 
     private int mInputQuantity = 1;
+
+    // Fixed price in U.S. dollars and cents: ten cents.
+    private double mPrice = 0.10;
+    // Exchange rates for Spain (ES) and Israel (IW).
+    private double mEsExchangeRate = 0.93; // 0.93 euros = $1
+    private double mIwExchangeRate = 3.61; // 3.61 new shekels = $1
+
+    private NumberFormat mCurrencyFormat = NumberFormat.getCurrencyInstance();
 
     /**
      * Creates the view with a toolbar for the options menu
@@ -82,6 +91,40 @@ public class MainActivity extends AppCompatActivity {
         TextView expirationDateView = findViewById(R.id.date);
         expirationDateView.setText(myFormattedDate);
 
+        // Set up the price and currency format.
+        String myFormattedPrice;
+        String deviceLocale = Locale.getDefault().getCountry();
+
+        switch (deviceLocale){
+            case "ES":
+                mPrice *= mEsExchangeRate;
+                break;
+            case "IL":
+                mPrice *= mIwExchangeRate;
+                break;
+            default:
+                mCurrencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        }
+        myFormattedPrice = mCurrencyFormat.format(mPrice);
+        
+
+        /**
+        if (deviceLocale.equals("ES") || deviceLocale.equals("IL")) {
+            if (deviceLocale.equals("ES")) {
+                mPrice *= mEsExchangeRate;
+            } else {
+                mPrice *= mIwExchangeRate;
+            }
+            myFormattedPrice = mCurrencyFormat.format(mPrice);
+        } else {
+            mCurrencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+            myFormattedPrice = mCurrencyFormat.format(mPrice);
+        }
+        **/
+
+        TextView localePrice = findViewById(R.id.price);
+        localePrice.setText(myFormattedPrice);
+
         // Add an onEditorActionListener to the EditText
         final EditText enteredQuantity = findViewById(R.id.quantity);
         enteredQuantity.setOnEditorActionListener(new EditText.OnEditorActionListener() {
@@ -111,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
 
     }
 

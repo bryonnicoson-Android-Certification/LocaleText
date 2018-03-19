@@ -107,13 +107,14 @@ limitations under the License. -->
 
     <EditText
         android:id="@+id/quantity"
+        style="@android:style/Widget.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/standard_margin"
         android:layout_marginStart="@dimen/standard_margin"
-        android:inputType="number"
-        style="@android:style/Widget.EditText"
+        android:ems="10"
         android:hint="@string/quantity_hint"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@id/quantity_label"
         app:layout_constraintLeft_toRightOf="@id/quantity_label"
         app:layout_constraintStart_toEndOf="@id/quantity_label" />
